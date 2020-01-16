@@ -1,10 +1,13 @@
 package com.example.APIMovie;
 
-public class MoviePacket {
+public class SimpleMoviePacket extends Packet {
 	private int ID;
 	private String title;
-	MoviePacket(){
-		
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
 	}
 	public int getID() {
 		return ID;
@@ -12,11 +15,4 @@ public class MoviePacket {
 	public void setID(int iD) {
 		ID = iD;
 	}
-	public String getTitle() {
-		return title;
-	}
-	public void setTitle(String title) {
-		this.title = title;
-	}
-	
 }
