@@ -7,13 +7,13 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public abstract class MovieDBReader {
-	protected final String apiUrl = "https://api.themoviedb.org/3/movie/";
+	protected final String apiUrl = "https://api.themoviedb.org/3";
 	protected URL fullURL;
 	
 	public String readUrl() {
 		String output = null;
 		try {
-			BufferedReader bReader = new BufferedReader(new InputStreamReader(fullURL.openStream(), "UTF-8"));
+			BufferedReader bReader = new BufferedReader(new InputStreamReader(this.fullURL.openStream(), "UTF-8"));
 			StringBuilder sb = new StringBuilder();
 			String sTemp = "";
 			while ((sTemp = bReader.readLine()) != null) {
@@ -35,4 +35,11 @@ public abstract class MovieDBReader {
 			return null;
 		}
 	}
+	public URL getFullURL() {
+		return fullURL;
+	}
+	public void setFullURL(URL fullURL) {
+		this.fullURL = fullURL;
+	}
+	
 }
