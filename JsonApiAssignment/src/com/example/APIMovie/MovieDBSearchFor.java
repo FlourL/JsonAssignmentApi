@@ -5,6 +5,9 @@ import java.net.URL;
 
 public class MovieDBSearchFor extends MovieDBReader{
 	public MovieDBSearchFor(String movieName) {
+		setFullURL(movieName);
+	}
+	private void setFullURL(String movieName) {
 		try {
 			this.fullURL = new URL(
 					this.apiUrl +
